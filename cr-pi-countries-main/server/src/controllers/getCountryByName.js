@@ -2,9 +2,9 @@ const { Country } = require("../db")
 
 const { Op } = require("sequelize");
 
-const getCountryByName = async (name) => {
-    const lowerCaseName = name.toLowerCase();
-    return await Country.findOne({ where: { name: { [Op.iLike]: `%${lowerCaseName}%` } } })
+const getCountryByName = async (nombre) => {
+    const lowerCaseName = nombre.toLowerCase();
+    return await Country.findOne({ where: { nombre: { [Op.iLike]: `%${lowerCaseName}%` } } })
 }
 
 
